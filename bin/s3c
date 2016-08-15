@@ -4,11 +4,18 @@
     # script
     script_path=$( dirname $0 )
 
+    # mkdir - ubuntu 14.04
+    mkdir -p "$script_path/../ubuntu-14.04-lts"
+
+    # cp - ubuntu-14.04 - pieces
+    cp -v "$script_path/../../ubuntu-14.04-lts/bin/getup" "$script_path/../ubuntu-14.04-lts/bin/getup"
+    cp -v "$script_path/../../ubuntu-14.04-lts/bin/setup" "$script_path/../ubuntu-14.04-lts/bin/setup"
+
     # aws - s3 - cp
-    aws s3 cp "$script_path/../index.html" 's3://s3.magento2setup.com/index.html'
+    aws s3 cp "$script_path/../index.html" 's3://magento2setup.com/index.html'
 
     # aws - s3 - cp - ubuntu-14.04
-    aws s3 cp "$script_path/../ubuntu-14.04-lts/bin/getup" 's3://s3.magento2setup.com/ubuntu-14.04-lts/bin/getup'
-    aws s3 cp "$script_path/../ubuntu-14.04-lts/bin/setup" 's3://s3.magento2setup.com/ubuntu-14.04-lts/bin/setup'
+    aws s3 cp "$script_path/../ubuntu-14.04-lts/bin/getup" 's3://magento2setup.com/ubuntu-14.04-lts/bin/getup'
+    aws s3 cp "$script_path/../ubuntu-14.04-lts/bin/setup" 's3://magento2setup.com/ubuntu-14.04-lts/bin/setup'
 
 
