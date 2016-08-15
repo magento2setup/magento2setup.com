@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+    # script
+    script_path=$( dirname $0 )
+
+    # mkdir - ubuntu 14.04
+    mkdir -p "$script_path/../ubuntu-14.04-lts"
+
+    # cp - ubuntu-14.04 - pieces
+    cp -v "$script_path/../../ubuntu-14.04-lts/bin/getup" "$script_path/../ubuntu-14.04-lts/bin/getup"
+    cp -v "$script_path/../../ubuntu-14.04-lts/bin/setup" "$script_path/../ubuntu-14.04-lts/bin/setup"
+
+
