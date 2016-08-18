@@ -4,6 +4,36 @@
 
         <!-- css -->
         <style>
+
+
+            html, body {
+                height:             100%;
+                width:              100%;
+                overflow:           hidden;
+            }
+            #main {
+                height:             100%;
+                width:              400px;
+                margin:             auto;
+            }
+
+
+            #icon {
+                margin:             200px auto;
+                width:              100%;
+                text-align:         center;
+                transition:         1s;
+            }
+            #icon img {
+                display:            inline-block;
+            }
+
+
+            #examples {
+                display:            none;
+            }
+
+
         </style>
 
         <!-- jQuery - CDN -->
@@ -15,11 +45,11 @@
 
         <!-- meta -->
         <meta charset="utf-8">
-        <meta name="description" content="The HTML5 Herald">
-        <meta name="author" content="SitePoint">
+        <meta name="description" content="Simplified Magento2 setup using scritps provided by magento2setup.">
+        <meta name="author"      content="magento2setup">
 
         <!-- title -->
-        <title>The HTML5 Herald</title>
+        <title>magento2setup</title>
 
         <!--[if lt IE 9]>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -28,7 +58,28 @@
     </head>
     <body>
 
-        <h1>magento2setup.com</h1>
+        <!-- | main -->
+        <div id='main'>
+
+            <!-- icon -->
+            <div id='icon'>
+                <img src="img/icon.256x256.png" alt="magento logo flipped" />
+            </div>
+
+            <!-- | example(s) -->
+            <div id='examples'>
+
+                <!-- ubuntu 14.04 lts -->
+                <div class='example'>
+                    <div class='title'><h2>Ubuntu 14.04 LTS</h2></div>
+                    <div class='command'>source <( curl -s s3.magento2setup.com/ubuntu-14.04-lts/bin/getup )</div>
+                </div>
+
+            </div>
+            <!-- example(s) | -->
+
+        </div>
+        <!-- main | -->
 
     </body>
 </html>
