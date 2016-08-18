@@ -12,7 +12,8 @@
     cp -v "$script_path/../../ubuntu-14.04-lts/bin/setup" "$script_path/../ubuntu-14.04-lts/bin/setup"
 
     # aws - s3 - cp
-    aws s3 cp "$script_path/../index.html" 's3://magento2setup.com/index.html'
+    aws s3 cp "$script_path/../index.html"           's3://magento2setup.com/index.html'
+    aws s3 cp "$script_path/../img/icon.256x256.png" 's3://magento2setup.com/img/icon.256.256.png'
 
     # aws - s3 - cp - ubuntu-14.04
     aws s3 cp "$script_path/../ubuntu-14.04-lts/bin/getup" 's3://magento2setup.com/ubuntu-14.04-lts/bin/getup'
