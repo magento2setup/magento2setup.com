@@ -19,10 +19,11 @@
 
 
             #icon {
-                margin:             200px auto;
+                margin:             50px 0 0 0;
                 width:              100%;
                 text-align:         center;
                 transition:         1s;
+                border-bottom:      1px solid #2b2b2b;
             }
             #icon img {
                 display:            inline-block;
@@ -30,7 +31,31 @@
 
 
             #examples {
-                display:            none;
+            }
+            #examples .example {
+
+            }
+            #examples .example .head {
+
+            }
+            #examples .example .head .icon {
+                display:            inline-block;
+                float:              left;
+                padding:            0 5px 0 5px;
+            }
+            #examples .example .head .icon img {
+                display:            inline-block;
+                height:             75px;
+            }
+            #examples .example .head .title {
+
+            }
+            #examples .example .head .title h2 {
+                font-size:          20px;
+                padding:            20px;
+            }
+            #examples .example .body {
+
             }
 
 
@@ -71,8 +96,13 @@
 
                 <!-- ubuntu 14.04 lts -->
                 <div class='example'>
-                    <div class='title'><h2>Ubuntu 14.04 LTS</h2></div>
-                    <div class='command'>source <( curl -s s3.magento2setup.com/ubuntu-14.04-lts/bin/getup )</div>
+                    <div class='head'>
+                        <div class='icon'><img src="img/ubuntu.128x128.png" alt="ubuntu logo" /></div>
+                        <div class='title'><h2>Ubuntu 14.04 LTS</h2></div>
+                    </div>
+                    <div class='body'>
+                        <div class='command'>source <( curl -s s3.magento2setup.com/ubuntu-14.04-lts/bin/getup )</div>
+                    </div>
                 </div>
 
             </div>
