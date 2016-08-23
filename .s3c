@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+    # script
+    script_path=$( dirname $0 )
+
+    # aws - s3 - cp
+    aws s3 sync --exclude '*.git*' "$script_path" 's3://magento2setup.com'
+
+

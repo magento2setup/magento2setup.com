@@ -1,0 +1,97 @@
+#!/bin/bash
+#
+#                            setup -=
+#                            setup -=
+#   aws -> aws-bucket -> aws-setup -=
+#                            setup -=
+#                            setup -=
+#       "Magento AWS"
+#
+#
+
+
+
+
+    # magento2
+    magento2_git="https://github.com/magento2setup/ubuntu-14.04-lts"
+    magento2_sys="/opt/magento2setup"
+
+    # shell
+    shell='/bin/bash'
+
+    # script
+    script=$( echo $0 )
+    script_path=$( dirname $0 )
+
+
+
+
+    # | function(s)
+
+        function install_git {
+            notice "+ installing git..."
+            apt-get install -q -y git
+        }
+
+        function notice {
+            logger -s -p user.notice -t "$script" "$@"
+        }
+
+        function error {
+            logger -s -p user.error -t "$script" "$@"
+        }
+
+        function usage {
+            echo "$script usage: $script  [ --git-codebase git:~/codebase.git ] [ --aio ] [ --app ]"
+        }
+
+    # function(s) |
+
+
+
+
+    # | main
+
+
+        # | run
+
+            # | checks & resources
+
+                # ? - git
+                [ ! -e '/usr/bin/git' ] && install_git
+                [ ! -e '/usr/bin/git' ] && error "git not found" && exit 2
+
+                # git - sync - git => system - magento2
+                [ ! -d "$magento2_sys" ] && git clone "$magento2_git" "$magento2_sys"
+
+                # ? - system - magento2
+                [ ! -d "$magento2_sys" ] && error "git sync failed" && exit 2
+
+            #  checks & resources |
+
+
+            # | setup
+
+                "$shell" "$magento2_sys/bin/update"
+                "$shell" "$magento2_sys/bin/upgrade"
+                "$shell" "$magento2_sys/bin/install-extra"
+                "$shell" "$magento2_sys/bin/install-apache"
+                "$shell" "$magento2_sys/bin/install-php"
+                "$shell" "$magento2_sys/bin/install-magento-latest"
+                "$shell" "$magento2_sys/bin/install-mysql"
+                "$shell" "$magento2_sys/bin/install-php-composer"
+                "$shell" "$magento2_sys/bin/install-cron"
+                "$shell" "$magento2_sys/bin/permission"
+                "$shell" "$magento2_sys/bin/restart"
+                "$shell" "$magento2_sys/bin/ascii"
+
+            # setup |
+
+        # run |
+
+
+    # main |
+
+
+
+
